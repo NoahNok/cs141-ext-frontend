@@ -35,6 +35,11 @@ body {
 
 .row-target {
     margin-right: 10px;
+    padding: 10px;
+    padding-right: 0px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .col-targets {
@@ -47,6 +52,9 @@ body {
         width: 3vmax;
         text-align: center;
         margin-bottom: 10px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
@@ -76,4 +84,12 @@ div#grid {
     align-items: center;
 
     border: 1px solid black;
+
+    &.active-cell {
+        background-color: rgba(black, 0.2);
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
 }

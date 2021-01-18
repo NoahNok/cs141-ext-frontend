@@ -53,6 +53,12 @@ body {
 
 .row-target {
   margin-right: 10px;
+  padding: 10px;
+  padding-right: 0px;
+}
+
+.row-target:hover {
+  cursor: pointer;
 }
 
 .col-targets {
@@ -70,6 +76,10 @@ body {
   width: 3vmax;
   text-align: center;
   margin-bottom: 10px;
+}
+
+.col-targets .col-target:hover {
+  cursor: pointer;
 }
 
 div#grid {
@@ -116,5 +126,13 @@ div#grid {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid black;
+}
+
+.cell.active-cell {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cell:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

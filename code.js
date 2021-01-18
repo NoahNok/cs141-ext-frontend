@@ -53,7 +53,7 @@ class Grid {
 
             
 
-            if (!isNaN(newValue)){
+            if (!isNaN(parseInt(newValue))){
                 cTarget.innerHTML = parseInt(newValue)
                 
             }
@@ -95,7 +95,7 @@ class Row {
 
             
 
-            if (!isNaN(newValue)){
+            if (!isNaN(parseInt(newValue))){
                 clazz.rowTarget.innerHTML = parseInt(newValue)
                 
             }
@@ -129,7 +129,7 @@ class Cell {
 
             
 
-            if (!isNaN(newValue)){
+            if (!isNaN(parseInt(newValue))){
                 clazz.cell.innerHTML = parseInt(newValue)
                 clazz.value = parseInt(newValue)
             }
@@ -219,6 +219,10 @@ function returnedData(data){
                     domCell.innerHTML = cell.act.operand
                 } else {
                     domCell.innerHTML = (cell.act.operand * -1)
+                }
+
+                if (cell.truth){
+                    domCell.classList.add("active-cell")
                 }
 
                 domRow.appendChild(domCell)
