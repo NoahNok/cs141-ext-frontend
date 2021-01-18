@@ -200,6 +200,7 @@ function returnedData(data){
     } 
 
     let solvedArea = document.getElementById("solved-grids")
+    solvedArea.innerHTML = ""
     let step = 1
 
     data.forEach(grid => {
