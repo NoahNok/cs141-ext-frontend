@@ -61,6 +61,28 @@ body {
   cursor: pointer;
 }
 
+.float-text {
+  position: fixed;
+  left: 35%;
+  right: 35%;
+  top: 0;
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
 .col-targets {
   display: -webkit-box;
   display: -ms-flexbox;
