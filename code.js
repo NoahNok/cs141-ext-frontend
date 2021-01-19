@@ -16,7 +16,7 @@ class Grid {
     }
 
     addNewRow(row){
-        if (this.rows.length >= 10) {
+        if (this.rows.length >= 5) {
             return
         }
         this.rows.push(row)
@@ -32,7 +32,7 @@ class Grid {
     }
 
     addColumn(){
-        if (this.rows[0].cells.length >= 10) {
+        if (this.rows[0].cells.length >= 5) {
             return
         }
         this.rows.forEach(row => {
