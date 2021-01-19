@@ -178,14 +178,17 @@ function initSolveButton() {
 
 
 function makeRequest(json){
-    fetch("https://web-ext-cw1-cs141.noahdhollowell.co.uk/grid", {
+    fetch("https://web-ext-cw1-cs141.noahdhollowell.co.uk/grid-solve", {
         method: "POST",
         body: json
     }).then(resp => resp.json())
     .then(data => {
         console.log(data)
-
-        returnedData(data)
+        if (data.length == 0) {
+            attemptViaSteps(json)
+            return
+        } 
+        returnedData(data, "Solution")
     })
     .catch(err => {
         alert("Something went wrong!")
@@ -193,7 +196,21 @@ function makeRequest(json){
 
 }
 
-function returnedData(data){
+function attemptViaSteps(json){
+    fetch("https://web-ext-cw1-cs141.noahdhollowell.co.uk/grid-steps", {
+        method: "POST",
+        body: json
+    }).then(resp => resp.json())
+    .then(data => {
+        console.log(data)
+        returnedData(data, "Step")
+    })
+    .catch(err => {
+        alert("Something went wrong!")
+    })
+}
+
+function returnedData(data, iterString){
     if (data.length == 0) {
         alert("This grid can't be solved")
         return
@@ -232,7 +249,7 @@ function returnedData(data){
         })
 
         let domStep = document.createElement("h3")
-        domStep.innerHTML = "Step " + step
+        domStep.innerHTML = iterString + " " + step
 
         solvedArea.appendChild(domStep)
         solvedArea.appendChild(domGrid)
